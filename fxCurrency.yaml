@@ -1,0 +1,101 @@
+swagger: "2.0"
+info:
+  description: "This is a practical test, using Foreign Exchange Currencies"
+  version: "1.0.0"
+  title: "Practical Test"
+  contact:
+    email: "khvalenton@gmail.com"
+host: "localhost:8080"
+tags:
+- name: "GET fx"
+  description: "Foreign Exchange Currency"
+  externalDocs:
+    description: "Link"
+    url: "https://exchangeratesapi.io/documentation/"
+- name: "POST fx"
+  description: "Foreign Exchange Currency"
+  externalDocs:
+    description: "Link"
+    url: "https://exchangerate.host/#/#docs"
+schemes:
+- "http"
+paths:
+  /fxCurrency:
+    get:
+      tags:
+      - "GET fx"
+      summary: "Get List of Foreign Currencies"
+      description: ""
+      operationId: "getFx"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                description: true / false
+              symbols:
+                type: string
+                description: Three letter currency code and description
+  /fxCurrency/convert:
+    post:
+      tags:
+      - "POST fx"
+      summary: "Convert Foreign Currencies"
+      description: ""
+      operationId: "postFx"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: query
+        name: from
+        type: string
+        description: The three-letter currency code of the currency you would like to convert from
+        required: true
+      - in: query
+        name: to
+        type: string
+        description: The three-letter currency code of the currency you would like to convert to
+        required: true
+      - in: query
+        name: amount
+        type: string
+        description: Amount that would be converted
+        required: true
+        
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: object
+            properties:
+              motd:
+                type: string
+                description: Message and Url of the creators
+              success:
+                type: boolean
+                description: true / false
+              query:
+                type: string
+                description: from, to, amount
+              info:
+                type: string
+                description: rate
+              historical:
+                type: boolean
+                description: true / false
+              date:
+                type: string
+                description: date
+              result:
+                type: number
+                description: conversion amount
+                
