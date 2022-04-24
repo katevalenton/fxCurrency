@@ -16,5 +16,5 @@ Installation Guide:
        --header 'Accept: application/json'
        
 ** You can also access the curls via the yaml file.
+
 ** As for the current reponse in Swagger its not configured properly to show the proper response
-![image](https://user-images.githubusercontent.com/22758392/164996314-33f27add-3baa-4db8-bb78-4e0d26921de7.png)
