@@ -7,10 +7,14 @@ Installation Guide:
 4) Test the API via Postman
   **CURLS**
   - GET Currency List
+  
   curl --location --request GET 'http://localhost:8080/fxCurrency' \
        --header 'Content-Type: application/json' \
        --header 'Accept: application/json'
+       
+       
   - POST Convert
+  
   curl --location --request POST 'http://localhost:8080/fxCurrency/convert?from=PHP&to=JPY&amount=100' \
        --header 'Content-Type: application/json' \
        --header 'Accept: application/json'
